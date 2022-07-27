@@ -1,0 +1,54 @@
+﻿@model LogisticsAssistant.Models.Schedule
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Schedule</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.departureStart)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.departureStart)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.departureEnd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.departureEnd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.roadLength)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.roadLength)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.truckId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.truckId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.details)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.details)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.scheduleCreatedAt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.scheduleCreatedAt)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

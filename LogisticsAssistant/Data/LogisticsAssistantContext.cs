@@ -15,5 +15,7 @@ namespace LogisticsAssistant.Data
         }
 
         public DbSet<LogisticsAssistant.Models.Truck> Truck { get; set; } = default!;
+
+        public DbSet<LogisticsAssistant.Models.Schedule>? Schedule { get; set; }
     }
 }
