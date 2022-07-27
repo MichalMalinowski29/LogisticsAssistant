@@ -14,8 +14,8 @@ namespace LogisticsAssistant.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Vmax = table.Column<int>(type: "int", nullable: false),
-                    BreakRequired = table.Column<int>(type: "int", nullable: false)
+                    vMax = table.Column<int>(type: "int", nullable: false),
+                    breakRequired = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

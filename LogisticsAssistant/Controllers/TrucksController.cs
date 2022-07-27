@@ -56,7 +56,7 @@ namespace LogisticsAssistant.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Vmax,BreakRequired")] Truck truck)
+        public async Task<IActionResult> Create([Bind("Id,vMax,breakRequired")] Truck truck)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace LogisticsAssistant.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Vmax,BreakRequired")] Truck truck)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,vMax,breakRequired")] Truck truck)
         {
             if (id != truck.Id)
             {

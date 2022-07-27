@@ -13,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Vmax)
+                @Html.DisplayNameFor(model => model.vMax)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BreakRequired)
+                @Html.DisplayNameFor(model => model.breakRequired)
             </th>
             <th></th>
         </tr>
@@ -25,10 +25,10 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Vmax)
+                @Html.DisplayFor(modelItem => item.vMax)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BreakRequired)
+                @Html.DisplayFor(modelItem => item.breakRequired)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

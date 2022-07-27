@@ -4,9 +4,9 @@ namespace LogisticsAssistant.Models
     public class Schedule
     {
         public int Id { get; set; }
-        [DataType(DataType.Time)]
+        [DataType(DataType.DateTime)]
         public DateTime departureStart { get; set; }
-        [DataType(DataType.Time)]
+        [DataType(DataType.DateTime)]
         public DateTime departureEnd { get; set; }
         public decimal roadLength { get; set; }
         public int truckId { get; set; }
