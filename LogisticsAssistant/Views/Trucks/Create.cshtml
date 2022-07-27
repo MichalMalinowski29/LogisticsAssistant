@@ -13,6 +13,11 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="truckId" class="control-label"></label>
+                <input asp-for="truckId" class="form-control" />
+                <span asp-validation-for="truckId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="vMax" class="control-label"></label>
                 <input asp-for="vMax" class="form-control" />
                 <span asp-validation-for="vMax" class="text-danger"></span>
