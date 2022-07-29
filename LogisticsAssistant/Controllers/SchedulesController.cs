@@ -35,8 +35,7 @@ namespace LogisticsAssistant.Controllers
                 return NotFound();
             }
 
-            var schedule = await _context.Schedule
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var schedule = await _context.Schedule.FirstOrDefaultAsync(m => m.Id == id);
             if (schedule == null)
             {
                 return NotFound();
@@ -60,6 +59,17 @@ namespace LogisticsAssistant.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (await _context.Truck.FirstOrDefaultAsync(m => m.truckId == schedule.truckId) == null)
+                {
+                    return RedirectToAction("Create");
+                }
+
+                if (schedule.departureStart < DateTime.Now || schedule.departureEnd < schedule.departureStart)
+                {
+                    return RedirectToAction("Create");
+                }
+
+
                 _context.Add(schedule);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

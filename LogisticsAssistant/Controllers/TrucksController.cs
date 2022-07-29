@@ -35,8 +35,7 @@ namespace LogisticsAssistant.Controllers
                 return NotFound();
             }
 
-            var truck = await _context.Truck
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var truck = await _context.Truck.FirstOrDefaultAsync(m => m.Id == id);
             if (truck == null)
             {
                 return NotFound();
