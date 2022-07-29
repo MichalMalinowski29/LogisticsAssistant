@@ -59,9 +59,17 @@ namespace LogisticsAssistant.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(truck);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                if (await _context.Truck.FirstOrDefaultAsync(m => m.truckId == truck.truckId) != null)
+                {
+                    return RedirectToAction("Create");
+                }
+                else
+                {
+                    _context.Add(truck);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             return View(truck);
         }

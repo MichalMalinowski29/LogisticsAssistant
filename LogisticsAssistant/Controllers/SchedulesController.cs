@@ -69,6 +69,19 @@ namespace LogisticsAssistant.Controllers
                     return RedirectToAction("Create");
                 }
 
+                if (_context.Schedule != null)
+                {
+                    List<Schedule> schedules = await _context.Schedule.ToListAsync();
+                    foreach(var singleSchedule in schedules)
+                    {
+                        var checkStart = singleSchedule.departureStart;
+                        var checkEnd = singleSchedule.departureEnd;
+                        if((schedule.departureStart > checkStart && schedule.departureStart < checkEnd) || (schedule.departureEnd > checkStart && schedule.departureEnd < checkEnd))
+                        {
+                            return RedirectToAction("Create");
+                        }
+                    }
+                }
 
                 _context.Add(schedule);
                 await _context.SaveChangesAsync();
